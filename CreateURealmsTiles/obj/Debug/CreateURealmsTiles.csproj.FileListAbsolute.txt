@@ -1,0 +1,2 @@
+C:\Users\sean-\Desktop\Repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csprojResolveAssemblyReference.cache
+C:\Users\sean-\Desktop\Repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csproj.CoreCompileInputs.cache
