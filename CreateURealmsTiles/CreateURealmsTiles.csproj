@@ -48,17 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="batch_CreateURealmsTileImages.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ImageAssets\BlankTileTemplate.png" />
-    <Content Include="ImageAssets\blinded.png" />
-    <Content Include="ImageAssets\burning.png" />
-    <Content Include="ImageAssets\charmed.png" />
-    <Content Include="ImageAssets\defeated.png" />
-    <Content Include="ImageAssets\frozen.png" />
-    <Content Include="ImageAssets\poisoned.png" />
-    <Content Include="ImageAssets\silenced.png" />
-    <Content Include="ImageAssets\stunned.png" />
+    <Content Include="Image_Assets\BlankTileTemplate.png" />
+    <Content Include="Image_Assets\blinded.png" />
+    <Content Include="Image_Assets\burning.png" />
+    <Content Include="Image_Assets\charmed.png" />
+    <Content Include="Image_Assets\defeated.png" />
+    <Content Include="Image_Assets\frozen.png" />
+    <Content Include="Image_Assets\poisoned.png" />
+    <Content Include="Image_Assets\silenced.png" />
+    <Content Include="Image_Assets\stunned.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

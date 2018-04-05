@@ -1,2 +1,9 @@
 C:\Users\sean-\Desktop\Repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csprojResolveAssemblyReference.cache
 C:\Users\sean-\Desktop\Repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csproj.CoreCompileInputs.cache
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\CreateURealmsTiles.exe.config
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\CreateURealmsTiles.exe
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\CreateURealmsTiles.pdb
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csprojResolveAssemblyReference.cache
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csproj.CoreCompileInputs.cache
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.exe
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.pdb
