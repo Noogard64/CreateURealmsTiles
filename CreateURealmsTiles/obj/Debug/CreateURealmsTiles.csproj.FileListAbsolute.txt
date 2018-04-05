@@ -7,3 +7,13 @@ C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\Crea
 C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.csproj.CoreCompileInputs.cache
 C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.exe
 C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\obj\Debug\CreateURealmsTiles.pdb
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\BlankTileTemplate.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\blinded.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\burning.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\charmed.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\defeated.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\frozen.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\poisoned.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\silenced.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\Image_Assets\stunned.png
+C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles\bin\Debug\batch_CreateURealmsTileImages.py

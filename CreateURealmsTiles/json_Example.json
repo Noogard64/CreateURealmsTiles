@@ -1,0 +1,388 @@
+{
+  "SaveName": "",
+  "GameMode": "",
+  "Gravity": 0.5,
+  "Date": "",
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "Rules": "",
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "ObjectStates": [
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -2.04072464E-07,
+        "posY": 1.02749979,
+        "posZ": -0.5,
+        "rotX": 5.493689E-06,
+        "rotY": 180.009384,
+        "rotZ": 2.58936348E-06,
+        "scaleX": 0.9000004,
+        "scaleY": 0.9000004,
+        "scaleZ": 0.9000004
+      },
+      "Nickname": "",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.9999998,
+        "g": 0.992160261,
+        "b": 0.9999998
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+        "DiffuseURL": "insert base url here",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 1,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "dd51e1",
+      "States": {
+        "4": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -2.00000119,
+            "posY": 1.02749932,
+            "posZ": 4.50000143,
+            "rotX": -6.18601143E-06,
+            "rotY": 180.009415,
+            "rotZ": 1.21392086E-05,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "BURNING",
+          "Description": "Cannot use Limited, Anytime, or Consumeable Actions",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert burning url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "182d78"
+        },
+        "5": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -5.91015748E-07,
+            "posY": 1.02749908,
+            "posZ": 4.500001,
+            "rotX": -7.33673642E-06,
+            "rotY": 180.0094,
+            "rotZ": 9.686672E-06,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "CHARMED",
+          "Description": "Must play anti party and attack team mates.",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert charmed url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "65b487"
+        },
+        "6": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": 1.00000012,
+            "posY": 1.02749908,
+            "posZ": 4.50000143,
+            "rotX": -1.11470472E-05,
+            "rotY": 180.0094,
+            "rotZ": -6.882933E-06,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "SILENCED",
+          "Description": "Cannot cast Spells",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert silenced url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "ece366"
+        },
+        "7": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": 2.00000048,
+            "posY": 1.02749956,
+            "posZ": 4.500001,
+            "rotX": -3.22189662E-05,
+            "rotY": 180.0094,
+            "rotZ": -1.23699356E-05,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "FROZEN",
+          "Description": "Cannot move or use actions that move you",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert frozen url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "89f070"
+        },
+        "8": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": 3.000001,
+            "posY": 1.02749968,
+            "posZ": 4.500001,
+            "rotX": 6.0391E-05,
+            "rotY": 180.009384,
+            "rotZ": 1.88227914E-05,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "STUNNED",
+          "Description": "Cannot do anything",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert stunned url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "5e064b"
+        },
+        "2": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -4.000004,
+            "posY": 1.02749968,
+            "posZ": 4.500003,
+            "rotX": -1.987089E-05,
+            "rotY": 180.009369,
+            "rotZ": -3.219814E-05,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "BLINDED",
+          "Description": "Miss on Low and Average Rolls",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert blind url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "7eaf40"
+        },
+        "3": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -4.000006,
+            "posY": 1.02749956,
+            "posZ": 4.50000429,
+            "rotX": -2.43078775E-05,
+            "rotY": 180.009369,
+            "rotZ": 6.774119E-06,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "POISONED",
+          "Description": "Cannot have your Stamina restored in anyway",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert poisoned url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "3a4ceb"
+        },
+        "9": {
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -4.00000858,
+            "posY": 1.02749956,
+            "posZ": 4.50000572,
+            "rotX": -4.95085224E-05,
+            "rotY": 180.009369,
+            "rotZ": -4.017276E-05,
+            "scaleX": 0.9000004,
+            "scaleY": 0.9000004,
+            "scaleZ": 0.9000004
+          },
+          "Nickname": "DANGER!",
+          "Description": "You cannot use Interrupt Actions and any direct attacks force you to Death Roll",
+          "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.992160261,
+            "b": 0.9999998
+          },
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "CustomMesh": {
+            "MeshURL": "http://www.buffalowizards.com/urlive/tabletop/token.obj",
+            "DiffuseURL": "insert defeated url here",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CastShadows": true
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "GUID": "56d686"
+        }
+      }
+    }
+  ],
+  "TabStates": {},
+  "VersionNumber": ""
+}

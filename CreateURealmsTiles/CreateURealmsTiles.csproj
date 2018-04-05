@@ -48,18 +48,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="batch_CreateURealmsTileImages.py" />
+    <None Include="batch_CreateURealmsTileImages.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="json_Example.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image_Assets\BlankTileTemplate.png" />
-    <Content Include="Image_Assets\blinded.png" />
-    <Content Include="Image_Assets\burning.png" />
-    <Content Include="Image_Assets\charmed.png" />
-    <Content Include="Image_Assets\defeated.png" />
-    <Content Include="Image_Assets\frozen.png" />
-    <Content Include="Image_Assets\poisoned.png" />
-    <Content Include="Image_Assets\silenced.png" />
-    <Content Include="Image_Assets\stunned.png" />
+    <Content Include="Image_Assets\BlankTileTemplate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\blinded.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\burning.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\charmed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\defeated.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\frozen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\poisoned.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\silenced.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image_Assets\stunned.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

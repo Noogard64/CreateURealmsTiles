@@ -129,16 +129,19 @@ namespace CreateURealmsTiles
             return find;
         }
 
-        static public void MakeImages(string file)
+        static public void MakeImages(string gimpLocation, string file)
         {
             try
             {
-
+                Console.WriteLine(
+                    Environment.CurrentDirectory);
                 var startInfo = new ProcessStartInfo
                 {
-                    WorkingDirectory = @"C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles",
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    //WorkingDirectory = @"C:\Users\Sean\Desktop\repos\CreateURealmsTiles\CreateURealmsTiles",
                     WindowStyle = ProcessWindowStyle.Normal,
-                    FileName = @"C:\Program Files\GIMP 2\bin\gimp-2.8.exe",
+                    //FileName = @"C:\Program Files\GIMP 2\bin\gimp-2.8.exe",
+                    FileName = gimpLocation,
                     RedirectStandardInput = true,
                     UseShellExecute = false,
                     Arguments = "gimp --verbose -idf --batch-interpreter=python-fu-eval -b \"import sys; sys.path =['.'] + sys.path; import batch_CreateURealmsTileImages; batch_CreateURealmsTileImages.run('" + file + "')\" -b \"pdb.gimp_quit(1)\""
