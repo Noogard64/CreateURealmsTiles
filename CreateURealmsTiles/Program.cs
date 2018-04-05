@@ -19,8 +19,26 @@ namespace CreateURealmsTiles
             //Execute GIMP-Python
             Functions.MakeImages(gimpExePath, file);
 
-            Console.ReadKey();
+            //Get Files as a collection
+            string[] files = Functions.GetImageFilesAsCollection(file);
 
+            //Create new JSON file
+            string newJsonFileName = Functions.CreateJSONFileFromTemplate(file);
+
+            foreach (string image in files)
+            {
+
+                var replace = UploadImage.UploadImageToImgur(file);
+
+                var find = Functions.textToFindInJSON(file);
+                Console.WriteLine(find);
+
+                Functions.UpdateJSONFile(newJsonFileName, find, replace);
+            }
+
+
+            Console.WriteLine("Finished!");
+            Console.ReadKey();
 
 
 

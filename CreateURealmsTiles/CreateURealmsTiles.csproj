@@ -51,7 +51,9 @@
     <None Include="batch_CreateURealmsTileImages.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="json_Example.json" />
+    <None Include="json_Example.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Image_Assets\BlankTileTemplate.png">

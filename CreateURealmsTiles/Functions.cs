@@ -54,12 +54,9 @@ namespace CreateURealmsTiles
             return file;
         }
 
-        static public string[] GetImageFilesAsCollection(string folderPath)
+        static public string[] GetImageFilesAsCollection(string file)
         {
-            if (folderPath == "")
-            {
-                folderPath = @"C:\Users\sean-\Desktop\urealms\Tiles\Regirock";
-            }
+            string folderPath = file.Replace(".png", ""); 
 
             string[] files = Directory.GetFiles(folderPath);
 
@@ -67,9 +64,10 @@ namespace CreateURealmsTiles
 
         }
 
-        static public string CreateJSONFileFromTemplate(string folderPath)
+        static public string CreateJSONFileFromTemplate(string file)
         {
-            var jsonTemplate = @"C:\Users\sean\Desktop\Repos\CreateURealmsTileJSON\CreateURealmsJSONFiles\json_Example.json";
+            string folderPath = file.Replace(".png", "");
+            var jsonTemplate = Environment.CurrentDirectory + @"\json_Example.json";
             String[] newJsonFile = folderPath.Split('\\');
             var newJsonFileName = folderPath + @"\" + newJsonFile.Last() + ".json";
             File.Copy(jsonTemplate, newJsonFileName, true);
@@ -133,8 +131,7 @@ namespace CreateURealmsTiles
         {
             try
             {
-                Console.WriteLine(
-                    Environment.CurrentDirectory);
+
                 var startInfo = new ProcessStartInfo
                 {
                     WorkingDirectory = Environment.CurrentDirectory,
