@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="batch_Sandbox.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="batch_CreateURealmsTileImages.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
