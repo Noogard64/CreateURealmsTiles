@@ -26,6 +26,12 @@ namespace CreateURealmsTiles
             Console.WriteLine("When GIMP has finished processing the image, press any key to continue.");
             Console.ReadKey();
 
+            string fileNameNoExt = Path.GetFileName(file);
+
+            string folderPath = "C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\Temp\\GIMP\\" + fileNameNoExt.Replace(".png","");
+            Process.Start(folderPath);
+
+            Console.ReadKey();
 
             //Get Files as a collection
             string[] files = Functions.GetImageFilesAsCollection(file);
@@ -51,7 +57,10 @@ namespace CreateURealmsTiles
                 }
             }
 
-            string folderPath = file.Replace(".png", "");
+            //string folderPath = file.Replace(".png", "");
+            //string folderPath = "C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\Temp\\GIMP\\" + file.Replace(".png", "");
+
+
 
             Console.WriteLine("Finished! Press any key to close this dialog. The location of your new JSON file will open.");
 
