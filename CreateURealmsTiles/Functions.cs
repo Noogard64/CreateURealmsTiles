@@ -141,6 +141,7 @@ namespace CreateURealmsTiles
                     FileName = gimpLocation,
                     RedirectStandardInput = true,
                     UseShellExecute = false,
+                    Verb = "runas",
                     Arguments = "gimp --as-new --verbose --no-interface -idf --batch-interpreter=python-fu-eval -b \"import sys; sys.path =['.'] + sys.path; import batch_CreateURealmsTileImages; batch_CreateURealmsTileImages.run('" + file + "')\" -b \"pdb.gimp_quit(1)\""
                 };
 
