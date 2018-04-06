@@ -56,7 +56,9 @@ namespace CreateURealmsTiles
 
         static public string[] GetImageFilesAsCollection(string file)
         {
-            string folderPath = file.Replace(".png", ""); 
+            string fileNameNoExt = Path.GetFileName(file);
+
+            string folderPath = ImageFolderInTempFolder(file);
 
             string[] files = Directory.GetFiles(folderPath);
 
@@ -66,10 +68,10 @@ namespace CreateURealmsTiles
 
         static public string CreateJSONFileFromTemplate(string file)
         {
-            string folderPath = file.Replace(".png", "");
+            string newOutputFolder = ImageFolderInTempFolder(file);
             var jsonTemplate = Environment.CurrentDirectory + @"\json_Example.json";
-            String[] newJsonFile = folderPath.Split('\\');
-            var newJsonFileName = folderPath + @"\" + newJsonFile.Last() + ".json";
+            string fileNameNoExt = GetImageFileNameWithNoExt(file);
+            var newJsonFileName = newOutputFolder + @"\" + fileNameNoExt + ".json";
             File.Copy(jsonTemplate, newJsonFileName, true);
             return newJsonFileName;
         }
@@ -126,6 +128,24 @@ namespace CreateURealmsTiles
             }
             return find;
         }
+
+        static public string GetTempFolder()
+        {
+            return "C:\\Users\\" + Environment.UserName + "\\AppData\\Local\\Temp\\CreateUrealmsTiles";
+        }
+
+        static public string ImageFolderInTempFolder(string file)
+        {
+            string fileNameNoExt = Path.GetFileName(file);
+            string folder = GetTempFolder();
+            return folder + "\\" + fileNameNoExt.Replace(".png", "");
+        }
+
+        static public string GetImageFileNameWithNoExt(string file)
+        {
+            return Path.GetFileName(file).Replace(".png","");
+        }
+
 
         static public void MakeImages(string gimpLocation, string file)
         {

@@ -14,7 +14,11 @@ def run(inputFileNameAndPath):
 	filePath = os.path.dirname(inputFileNameAndPath)
 	fileName = os.path.basename(inputFileNameAndPath)
 	fileNameNoExt = os.path.splitext(os.path.basename(fileName))[0]
-	outputFolder = filePath + '\\' + fileNameNoExt 
+
+	username = os.environ.get('username')
+	outputFolder = "C:\\Users\\" + username + "\\AppData\\Local\\Temp\\CreateURealmsTiles\\" + fileNameNoExt
+
+	#outputFolder = filePath + '\\' + fileNameNoExt 
 	outputFileName = fileNameNoExt
 	inputFile = inputFileNameAndPath
 	

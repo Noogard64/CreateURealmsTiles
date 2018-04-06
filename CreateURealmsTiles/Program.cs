@@ -15,11 +15,6 @@ namespace CreateURealmsTiles
 
             //Get the name of the file
             string file = Functions.GetFile();
-            //string file = @"C:\Users\sean-\Desktop\urealms\Tiles\Regirock.png"; 
-            //string file = @"C:\Users\Sean\Desktop\urealms\urealms_tiles\NPC_Dwarf_01.png"; 
-
-            //C:\Users\sean-\Desktop\urealms\Tiles\Regirock.png
-
 
             //Execute GIMP-Python
             Functions.MakeImages(gimpExePath, file);
@@ -51,11 +46,12 @@ namespace CreateURealmsTiles
                 }
             }
 
-            string folderPath = file.Replace(".png", "");
+            
 
-            Console.WriteLine("Finished! Press any key to close this dialog. The location of your new JSON file will open.");
-
+            Console.WriteLine("Finished! Press any key to close this dialogand open the output folder.");
             Console.ReadKey();
+
+            string folderPath = Functions.GetTempFolder();
             Process.Start(folderPath);
 
 
