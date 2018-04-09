@@ -7,6 +7,40 @@ namespace CreateURealmsTiles
 {
     class Functions
     {
+        static public void CreateTempFolder()
+        {
+            string tempFolder = GetTempFolder();
+            Directory.CreateDirectory(tempFolder);
+        }
+
+        static public void CreateLogFile()
+        {
+            string logFile = GetLogFile();
+
+            if (File.Exists(logFile))
+            {
+                File.Delete(logFile);
+            }
+
+            var file = File.CreateText(logFile);
+            file.Close();
+        }
+
+        static public void WriteToLogFile(string logValue)
+        {
+            string createText = logValue + Environment.NewLine;
+            string logFile = GetLogFile();
+
+            var file = File.AppendText(logFile);
+            file.WriteLine(logValue);
+            file.Close();
+            Console.WriteLine(logValue);
+        }
+
+        static public string GetLogFile()
+        {
+            return GetTempFolder() + "\\log.txt";
+        }
 
         static public string GetGimpExePath()
         {
@@ -18,7 +52,7 @@ namespace CreateURealmsTiles
             {
                 if (File.Exists(gimpLocation) == false)
                 {
-                    Console.WriteLine("'gimp-2.8.exe' not found in default location. Please enter location.");
+                    WriteToLogFile("'gimp-2.8.exe' not found in default location. Please enter location.");
                     gimpLocation = Console.ReadLine();
 
                 }
@@ -35,14 +69,14 @@ namespace CreateURealmsTiles
             bool fileFound = false;
             string file;
 
-            Console.WriteLine("Input filepath of image:");
+            WriteToLogFile("Input filepath of image:");
             do
             {
                 
                 file = Console.ReadLine();
                 if (File.Exists(file) == false)
                 {
-                    Console.WriteLine("Image not found. Try again.");
+                    WriteToLogFile("Image not found. Try again.");
                 }
                 else
                 {
@@ -73,6 +107,7 @@ namespace CreateURealmsTiles
             string fileNameNoExt = GetImageFileNameWithNoExt(file);
             var newJsonFileName = newOutputFolder + @"\" + fileNameNoExt + ".json";
             File.Copy(jsonTemplate, newJsonFileName, true);
+            WriteToLogFile("JSON created here: [" + newJsonFileName + "]");
             return newJsonFileName;
         }
 
@@ -151,7 +186,7 @@ namespace CreateURealmsTiles
         {
             try
             {
-
+                string args = "gimp --as-new --verbose --no-interface -idf --batch-interpreter=python-fu-eval -b \"import sys; sys.path =['.'] + sys.path; import batch_CreateURealmsTileImages; batch_CreateURealmsTileImages.run('" + file + "')\" -b \"pdb.gimp_quit(1)\"";
                 var startInfo = new ProcessStartInfo
                 {
                     WorkingDirectory = Environment.CurrentDirectory,
@@ -162,14 +197,26 @@ namespace CreateURealmsTiles
                     RedirectStandardInput = true,
                     UseShellExecute = false,
                     Verb = "runas",
-                    Arguments = "gimp --as-new --verbose --no-interface -idf --batch-interpreter=python-fu-eval -b \"import sys; sys.path =['.'] + sys.path; import batch_CreateURealmsTileImages; batch_CreateURealmsTileImages.run('" + file + "')\" -b \"pdb.gimp_quit(1)\""
+                    Arguments = args
                 };
+                WriteToLogFile("#################################");
+
+                WriteToLogFile("Executing the file below:");
+                WriteToLogFile(gimpLocation);
+
+                WriteToLogFile("Using the arguments below:");
+                WriteToLogFile(args);
+
+                WriteToLogFile("From the directory below:");
+                WriteToLogFile(Environment.CurrentDirectory.ToString());
+
+                WriteToLogFile("#################################");
 
                 Process.Start(startInfo);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                WriteToLogFile(e.ToString());
             }
         }
     }

@@ -14,6 +14,13 @@ namespace CreateURealmsTiles
         {
 
             string jsonResults = uploadimage(file);
+            if (jsonResults == null)
+            {
+                Functions.WriteToLogFile("An error has occurred. Press any key to close the console.");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
             string url = getURLFromJson(jsonResults);
             return url;
 
@@ -30,23 +37,30 @@ namespace CreateURealmsTiles
 
         static public string uploadimage(string filename)
         {
-
-            var file = File.ReadAllBytes(filename);
-
-            using (var w = new WebClient())
+            try
             {
-                var values = new NameValueCollection
-                {
-                    {"image", Convert.ToBase64String(file)},
-                    {"type", "base64"}
-                };
-                //client.Headers.Add("Authorization", "BEARER " + accessToken);
-                w.Headers.Add("Authorization", "Client-ID c927064c3cd35e5");
-                var response = w.UploadValues("https://api.imgur.com/3/image", values);
+                var file = File.ReadAllBytes(filename);
 
-                string jsonResults = Encoding.UTF8.GetString(response);
-                return jsonResults;
+                using (var w = new WebClient())
+                {
+                    var values = new NameValueCollection
+                    {
+                        {"image", Convert.ToBase64String(file)},
+                        {"type", "base64"}
+                    };
+                    //client.Headers.Add("Authorization", "BEARER " + accessToken);
+                    w.Headers.Add("Authorization", "Client-ID c927064c3cd35e5");
+                    var response = w.UploadValues("https://api.imgur.com/3/image", values);
+
+                    string jsonResults = Encoding.UTF8.GetString(response);
+                    return jsonResults;
+                }
             }
+            catch (Exception e)
+            {
+                Functions.WriteToLogFile(e.ToString());
+            }
+            return null;
 
         }
     }

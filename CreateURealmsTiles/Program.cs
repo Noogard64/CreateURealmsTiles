@@ -9,12 +9,18 @@ namespace CreateURealmsTiles
         static void Main(string[] args)
         {
             //Setup
+            Functions.CreateTempFolder();
+            Functions.CreateLogFile();
+
 
             //Does GIMP exist in the default directory?
             string gimpExePath = Functions.GetGimpExePath();
+            Functions.WriteToLogFile("GIMP path is [" + gimpExePath + "]");
+
 
             //Get the name of the file
             string file = Functions.GetFile();
+            Functions.WriteToLogFile("File is located here: [" + file + "]");
 
             //Execute GIMP-Python
             Functions.MakeImages(gimpExePath, file);
@@ -32,23 +38,23 @@ namespace CreateURealmsTiles
             {
                 if (image.Contains("json") == false)
                 {
-                    Console.WriteLine("#################################");
-                    Console.WriteLine("Uploading [" + image + "] to Imgur.");
+                    Functions.WriteToLogFile("#################################");
+                    Functions.WriteToLogFile("Uploading [" + image + "] to Imgur.");
                     var replace = UploadImage.UploadImageToImgur(image);
 
                     var find = Functions.textToFindInJSON(image);
 
-                    Console.WriteLine("Adding [" + image + "] to JSON file.");
+                    Functions.WriteToLogFile("Adding [" + image + "] to JSON file.");
                     Functions.UpdateJSONFile(newJsonFileName, find, replace);
 
-                    Console.WriteLine("[" + image + "] finished.");
+                    Functions.WriteToLogFile("[" + image + "] finished.");
 
                 }
             }
 
-            
 
-            Console.WriteLine("Finished! Press any key to close this dialogand open the output folder.");
+
+            Functions.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
             Console.ReadKey();
 
             string folderPath = Functions.GetTempFolder();
