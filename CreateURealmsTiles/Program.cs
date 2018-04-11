@@ -8,22 +8,23 @@ namespace CreateURealmsTiles
     {
         static void Main(string[] args)
         {
+            //#################################################################3
             //Setup
-            Functions.CreateTempFolder();
-            Functions.CreateLogFile();
-
+            Setup.CreateTempFolder();
+            Setup.CreateLogFile();
 
             //Does GIMP exist in the default directory?
-            string gimpExePath = Functions.GetGimpExePath();
-            Functions.WriteToLogFile("GIMP path is [" + gimpExePath + "]");
+            string gimpExeFile = Setup.GetGimpExeFile();
+            Functions.WriteToLogFile("GIMP path is [" + gimpExeFile + "]");
 
 
             //Get the name of the file
-            string file = Functions.GetFile();
+            string file = Setup.GetImageFile();
             Functions.WriteToLogFile("File is located here: [" + file + "]");
+            //#################################################################3
 
             //Execute GIMP-Python
-            Functions.MakeImages(gimpExePath, file);
+            Functions.MakeImages(gimpExeFile, file);
             Console.WriteLine("When GIMP has finished processing the image, press any key to continue.");
             Console.ReadKey();
 
@@ -32,7 +33,7 @@ namespace CreateURealmsTiles
             string[] files = Functions.GetImageFilesAsCollection(file);
 
             //Create new JSON file
-            string newJsonFileName = Functions.CreateJSONFileFromTemplate(file);
+            string newJsonFileName = CreateJSONFile.CreateJSONFileFromTemplate(file);
 
             foreach (string image in files)
             {
@@ -42,10 +43,10 @@ namespace CreateURealmsTiles
                     Functions.WriteToLogFile("Uploading [" + image + "] to Imgur.");
                     var replace = UploadImage.UploadImageToImgur(image);
 
-                    var find = Functions.textToFindInJSON(image);
+                    var find = CreateJSONFile.GetSearchStringForJSON(image);
 
                     Functions.WriteToLogFile("Adding [" + image + "] to JSON file.");
-                    Functions.UpdateJSONFile(newJsonFileName, find, replace);
+                    CreateJSONFile.UpdateJSONFile(newJsonFileName, find, replace);
 
                     Functions.WriteToLogFile("[" + image + "] finished.");
 
