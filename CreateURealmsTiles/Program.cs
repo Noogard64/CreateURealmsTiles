@@ -6,6 +6,7 @@ namespace CreateURealmsTiles
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             //#################################################################3

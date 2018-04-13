@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CreateURealmsTiles
 {
@@ -28,46 +29,53 @@ namespace CreateURealmsTiles
         {
             string gimpLocation = @"C:\Program Files\GIMP 2\bin\gimp-2.8.exe";
 
-            bool gimpFound = false;
 
-            do
+            if (File.Exists(gimpLocation) == false)
             {
-                if (File.Exists(gimpLocation) == false)
-                {
-                    Functions.WriteToLogFile("'gimp-2.8.exe' not found in default location. Please enter location.");
-                    gimpLocation = Console.ReadLine();
 
-                }
-                else
+                OpenFileDialog openFileDialog1 = new OpenFileDialog
                 {
-                    gimpFound = true;
-                }
-            } while (gimpFound == false);
+
+                    Title = "'gimp-2.8.exe' not found in default location. Please select it.",
+                    InitialDirectory = @"C:\Program Files\GIMP 2\bin",
+                    Filter = "gimp-2.8.exe|gimp-2.8.exe",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+
+                };
+
+                openFileDialog1.ShowDialog();
+
+                string results = openFileDialog1.FileName;
+                Functions.WriteToLogFile("Custom location for 'gimp-2.8.exe' selected: [" + results + "]");
+                
+
+            }
+
             return gimpLocation;
         }
 
         static public string GetImageFile()
         {
-            bool fileFound = false;
-            string file;
 
-            Functions.WriteToLogFile("Input filepath of image:");
-            do
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
 
-                file = Console.ReadLine();
-                if (File.Exists(file) == false)
-                {
-                    Functions.WriteToLogFile("Image not found. Try again.");
-                }
-                else
-                {
-                    fileFound = true;
-                }
+                Title = "What image do you want to use?",
+                InitialDirectory = @"C:\Users\"+ Environment.UserName + @"\Desktop",
+                Filter = "Image Files|*.png;*.jpg;*.jpeg",
+                FilterIndex = 2,
+                RestoreDirectory = true
 
+            };
 
-            } while (fileFound == false);
-            return file;
+            openFileDialog1.ShowDialog();
+
+            string results = openFileDialog1.FileName;
+            Functions.WriteToLogFile("Image selected at this location: [" + results + "]");
+
+            return results;
+
         }
     }
 }
