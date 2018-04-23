@@ -12,7 +12,7 @@ namespace CreateURealmsTiles
             string fileNameNoExt = Functions.GetImageFileNameWithNoExt(file);
             var newJsonFileName = newOutputFolder + @"\" + fileNameNoExt + ".json";
             File.Copy(jsonTemplate, newJsonFileName, true);
-            Functions.WriteToLogFile("JSON created here: [" + newJsonFileName + "]");
+            Logging.WriteToLogFile("JSON created here: [" + newJsonFileName + "]");
             return newJsonFileName;
         }
 

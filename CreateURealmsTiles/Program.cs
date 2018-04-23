@@ -9,23 +9,25 @@ namespace CreateURealmsTiles
         [STAThread]
         static void Main(string[] args)
         {
-            //#################################################################3
-            //Setup
-            Setup.CreateTempFolder();
-            Setup.CreateLogFile();
+
+            //Create Temp directory: 
+            Directory.CreateDirectory(Variables.GetTempFolder());
+
+            //Create fresh Log File:
+            Logging.CreateLogFile();
 
             //Does GIMP exist in the default directory?
             string gimpExeFile = Setup.GetGimpExeFile();
-            Functions.WriteToLogFile("GIMP path is [" + gimpExeFile + "]");
+            Logging.WriteToLogFile("GIMP path is [" + gimpExeFile + "]");
 
 
             //Get the name of the file
             string file = Setup.GetImageFile();
-            Functions.WriteToLogFile("File is located here: [" + file + "]");
+            Logging.WriteToLogFile("File is located here: [" + file + "]");
             //#################################################################3
 
             //Execute GIMP-Python
-            Functions.MakeImages(gimpExeFile, file);
+            GIMP.MakeImages(gimpExeFile, file);
             Console.WriteLine("When GIMP has finished processing the image, press any key to continue.");
             Console.ReadKey();
 
@@ -40,26 +42,26 @@ namespace CreateURealmsTiles
             {
                 if (image.Contains("json") == false)
                 {
-                    Functions.WriteToLogFile("#################################");
-                    Functions.WriteToLogFile("Uploading [" + image + "] to Imgur.");
+                    Logging.WriteToLogFile("#################################");
+                    Logging.WriteToLogFile("Uploading [" + image + "] to Imgur.");
                     var replace = UploadImage.UploadImageToImgur(image);
 
                     var find = CreateJSONFile.GetSearchStringForJSON(image);
 
-                    Functions.WriteToLogFile("Adding [" + image + "] to JSON file.");
+                    Logging.WriteToLogFile("Adding [" + image + "] to JSON file.");
                     CreateJSONFile.UpdateJSONFile(newJsonFileName, find, replace);
 
-                    Functions.WriteToLogFile("[" + image + "] finished.");
+                    Logging.WriteToLogFile("[" + image + "] finished.");
 
                 }
             }
 
 
 
-            Functions.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
+            Logging.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
             Console.ReadKey();
 
-            string folderPath = Functions.GetTempFolder();
+            string folderPath = Variables.GetTempFolder();
             Process.Start(folderPath);
 
 

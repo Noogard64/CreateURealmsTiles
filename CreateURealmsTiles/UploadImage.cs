@@ -16,7 +16,7 @@ namespace CreateURealmsTiles
             string jsonResults = uploadimage(file);
             if (jsonResults == null)
             {
-                Functions.WriteToLogFile("An error has occurred. Press any key to close the console.");
+                Logging.WriteToLogFile("An error has occurred. Press any key to close the console.");
                 Console.ReadKey();
                 Environment.Exit(0);
             }
@@ -58,7 +58,7 @@ namespace CreateURealmsTiles
             }
             catch (Exception e)
             {
-                Functions.WriteToLogFile(e.ToString());
+                Logging.WriteToLogFile(e.ToString());
             }
             return null;
 

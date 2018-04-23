@@ -6,15 +6,11 @@ namespace CreateURealmsTiles
 {
     class Setup
     {
-        static public void CreateTempFolder()
-        {
-            string tempFolder = Functions.GetTempFolder();
-            Directory.CreateDirectory(tempFolder);
-        }
+
 
         static public void CreateLogFile()
         {
-            string logFile = Functions.GetLogFile();
+            string logFile = Variables.GetLogFile();
 
             if (File.Exists(logFile))
             {
@@ -47,7 +43,7 @@ namespace CreateURealmsTiles
                 openFileDialog1.ShowDialog();
 
                 string results = openFileDialog1.FileName;
-                Functions.WriteToLogFile("Custom location for 'gimp-2.8.exe' selected: [" + results + "]");
+                Logging.WriteToLogFile("Custom location for 'gimp-2.8.exe' selected: [" + results + "]");
                 
 
             }
@@ -72,7 +68,7 @@ namespace CreateURealmsTiles
             openFileDialog1.ShowDialog();
 
             string results = openFileDialog1.FileName;
-            Functions.WriteToLogFile("Image selected at this location: [" + results + "]");
+            Logging.WriteToLogFile("Image selected at this location: [" + results + "]");
 
             return results;
 
