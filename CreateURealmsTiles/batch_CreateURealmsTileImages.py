@@ -83,6 +83,11 @@ def run(inputFileNameAndPath):
 		#Paste Circle to new image_Input
 		pdb.gimp_message('Pasting image...')		
 		newImage = pdb.gimp_edit_paste_as_new()
+
+
+		outputFile = outputFolder + '\\' + outputFileName + '.png'
+		pdb.gimp_message(outputFile)
+		pdb.file_png_save_defaults(newImage, newImage.active_layer, outputFile, outputFile)
 		
 		#Flip Image
 		pdb.gimp_message('Flipping image...')	
@@ -93,9 +98,11 @@ def run(inputFileNameAndPath):
 		pdb.gimp_layer_resize(newImage.layers[0], 512, 512, 0, 0)
 
 		#Save circle as new image_Input
-		pdb.gimp_message('Saving file...')	
-		outputFile = filePath + '\saved_imageAsCircle.png'
-		pdb.file_png_save_defaults(newImage, newImage.active_layer, outputFile, outputFile)
+		pdb.gimp_message('Saving file...')
+		
+		#outputFile = outputFolder + '\\' + outputFileName + '.png'
+		#pdb.gimp_message(outputFile)
+		#pdb.file_png_save_defaults(newImage, newImage.active_layer, outputFile, outputFile)
 	except Exception as e:
 		WriteToLogFileAndConsole(e.args[0])
 		gimp.quit()
@@ -164,7 +171,7 @@ def run(inputFileNameAndPath):
 	##########################################################
 	#Clean up
 	##########################################################	
-	os.remove(outputFile) 
+	#os.remove(outputFile) 
 
 	pdb.gimp_message('#############################')
 	pdb.gimp_message('Ending GIMP Image process!')

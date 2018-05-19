@@ -64,12 +64,24 @@ namespace CreateURealmsTiles
             //Console.ReadKey();
 
 
-            var fileName = Functions.GetImageFileNameWithNoExt(newJsonFileName);
+            var JsonfileName = Path.GetFileName(newJsonFileName);
 
-            var jsonFileNameAndNewDestination = @"C:\Users\" + Environment.UserName + @"\Documents\My Games\Tabletop Simulator\Saves\Saved Objects\CustomTiles\" + fileName;
+            var CustomTilesFileLocation = @"C:\Users\" + Environment.UserName + @"\Documents\My Games\Tabletop Simulator\Saves\Saved Objects\CustomTiles\";
+
+
+            var jsonFileNameAndNewDestination = CustomTilesFileLocation + @"\" + JsonfileName;
+
+            //TODO Create file path and file name for new PNG file location. This image is effectively a thumb nail in TTS
+            //var pngFileNameAndNewDestination = CustomTilesFileLocation + @"\" + ;
+
+
+            //TODO Get the filename and path for the thumbnail PNG
+            //var pngFileNameAndPath
 
             File.Copy(newJsonFileName, jsonFileNameAndNewDestination);
 
+            //TODO Copy the thumbnail image to the CustomTilesFileLocation
+            //File.Copy(, pngFileNameAndNewDestination);
             Functions.WriteToLogFile("Finished!");
             Console.ReadKey();
 
