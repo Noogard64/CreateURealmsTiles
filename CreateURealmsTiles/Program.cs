@@ -30,6 +30,10 @@ namespace CreateURealmsTiles
             Console.ReadKey();
 
 
+            //Making JPG and JPEG work
+            file = file.Replace(".jpeg", ".png");
+            file = file.Replace(".jpg", ".png");
+
             //Get Files as a collection
             string[] files = Functions.GetImageFilesAsCollection(file);
 
@@ -56,16 +60,26 @@ namespace CreateURealmsTiles
 
 
 
-            Functions.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
+            //Functions.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
+            //Console.ReadKey();
+
+
+            var fileName = Functions.GetImageFileNameWithNoExt(newJsonFileName);
+
+            var jsonFileNameAndNewDestination = @"C:\Users\" + Environment.UserName + @"\Documents\My Games\Tabletop Simulator\Saves\Saved Objects\CustomTiles\" + fileName;
+
+            File.Copy(newJsonFileName, jsonFileNameAndNewDestination);
+
+            Functions.WriteToLogFile("Finished!");
             Console.ReadKey();
 
-            string folderPath = Functions.GetTempFolder();
-            Process.Start(folderPath);
+            //string folderPath = Functions.GetTempFolder();
+            //Process.Start(folderPath);
 
 
 
         }
 
-        
+
     }
 }
