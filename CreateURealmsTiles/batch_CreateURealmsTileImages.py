@@ -85,7 +85,7 @@ def run(inputFileNameAndPath):
 		newImage = pdb.gimp_edit_paste_as_new()
 
 
-		outputFile = outputFolder + '\\' + outputFileName + '.png'
+		outputFile = outputFolder + '\\' + fileNameNoExt + '.png'
 		pdb.gimp_message(outputFile)
 		pdb.file_png_save_defaults(newImage, newImage.active_layer, outputFile, outputFile)
 		

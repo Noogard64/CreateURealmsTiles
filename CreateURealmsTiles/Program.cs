@@ -20,56 +20,73 @@ namespace CreateURealmsTiles
 
 
             //Get the name of the file
-            string file = Setup.GetImageFile();
-            Functions.WriteToLogFile("File is located here: [" + file + "]");
-            //#################################################################3
+            string[] files = Setup.GetImageFile();
 
-            //Execute GIMP-Python
-            Functions.MakeImages(gimpExeFile, file);
-            Console.WriteLine("When GIMP has finished processing the image, press any key to continue.");
-            Console.ReadKey();
+            string newFileVar;
 
-
-            //Making JPG and JPEG work
-            file = file.Replace(".jpeg", ".png");
-            file = file.Replace(".jpg", ".png");
-
-            //Get Files as a collection
-            string[] files = Functions.GetImageFilesAsCollection(file);
-
-            //Create new JSON file
-            string newJsonFileName = CreateJSONFile.CreateJSONFileFromTemplate(file);
-
-            foreach (string image in files)
+            foreach (var file in files)
             {
-                if (image.Contains("json") == false)
+                Functions.WriteToLogFile("File is located here: [" + file + "]");
+                //#################################################################3
+
+                //Execute GIMP-Python
+                Functions.MakeImages(gimpExeFile, file);
+                Console.WriteLine("When GIMP has finished processing the image, press any key to continue.");
+                Console.ReadKey();
+
+
+                //Making JPG and JPEG work
+
+
+                newFileVar = file.Replace(".jpeg", ".png");
+                newFileVar = newFileVar.Replace(".jpg", ".png");
+
+
+                var newFileVarOnlyName = Path.GetFileName(newFileVar);
+
+                //Get Files as a collection
+                string[] images = Functions.GetImageFilesAsCollection(newFileVar);
+
+                //Create new JSON file
+                string newJsonFileName = CreateJSONFile.CreateJSONFileFromTemplate(newFileVar);
+
+                foreach (string image in images)
                 {
-                    Functions.WriteToLogFile("#################################");
-                    Functions.WriteToLogFile("Uploading [" + image + "] to Imgur.");
-                    var replace = UploadImage.UploadImageToImgur(image);
+                    if (Path.GetFileName(image) == newFileVarOnlyName)
+                    {
+                        //Do Nothing
+                    }
 
-                    var find = CreateJSONFile.GetSearchStringForJSON(image);
+                    else if (image.Contains("json") == false)
+                    {
+                        Functions.WriteToLogFile("#################################");
+                        Functions.WriteToLogFile("Uploading [" + image + "] to Imgur.");
+                        var replace = UploadImage.UploadImageToImgur(image);
 
-                    Functions.WriteToLogFile("Adding [" + image + "] to JSON file.");
-                    CreateJSONFile.UpdateJSONFile(newJsonFileName, find, replace);
+                        var find = CreateJSONFile.GetSearchStringForJSON(image);
 
-                    Functions.WriteToLogFile("[" + image + "] finished.");
+                        Functions.WriteToLogFile("Adding [" + image + "] to JSON file.");
+                        CreateJSONFile.UpdateJSONFile(newJsonFileName, find, replace);
+
+                        Functions.WriteToLogFile("[" + image + "] finished.");
+                        File.Delete(image);
+
+                    }
 
                 }
             }
-
 
 
             //Functions.WriteToLogFile("Finished! Press any key to close this dialog and open the output folder.");
             //Console.ReadKey();
 
 
-            var JsonfileName = Path.GetFileName(newJsonFileName);
+            //var JsonfileName = Path.GetFileName(newJsonFileName);
 
-            var CustomTilesFileLocation = @"C:\Users\" + Environment.UserName + @"\Documents\My Games\Tabletop Simulator\Saves\Saved Objects\CustomTiles\";
+            //var CustomTilesFileLocation = @"C:\Users\" + Environment.UserName + @"\Documents\My Games\Tabletop Simulator\Saves\Saved Objects\CustomTiles\";
 
 
-            var jsonFileNameAndNewDestination = CustomTilesFileLocation + @"\" + JsonfileName;
+            //var jsonFileNameAndNewDestination = CustomTilesFileLocation + @"\" + JsonfileName;
 
             //TODO Create file path and file name for new PNG file location. This image is effectively a thumb nail in TTS
             //var pngFileNameAndNewDestination = CustomTilesFileLocation + @"\" + ;
@@ -78,15 +95,15 @@ namespace CreateURealmsTiles
             //TODO Get the filename and path for the thumbnail PNG
             //var pngFileNameAndPath
 
-            File.Copy(newJsonFileName, jsonFileNameAndNewDestination);
+            //File.Copy(newJsonFileName, jsonFileNameAndNewDestination);
 
             //TODO Copy the thumbnail image to the CustomTilesFileLocation
             //File.Copy(, pngFileNameAndNewDestination);
             Functions.WriteToLogFile("Finished!");
             Console.ReadKey();
 
-            //string folderPath = Functions.GetTempFolder();
-            //Process.Start(folderPath);
+            string folderPath = Functions.GetTempFolder();
+            Process.Start(folderPath);
 
 
 

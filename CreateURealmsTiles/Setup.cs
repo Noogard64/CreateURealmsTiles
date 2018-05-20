@@ -55,7 +55,7 @@ namespace CreateURealmsTiles
             return gimpLocation;
         }
 
-        static public string GetImageFile()
+        static public string[] GetImageFile()
         {
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
@@ -65,13 +65,14 @@ namespace CreateURealmsTiles
                 InitialDirectory = @"C:\Users\"+ Environment.UserName + @"\Desktop",
                 Filter = "Image Files|*.png;*.jpg;*.jpeg",
                 FilterIndex = 2,
-                RestoreDirectory = true
+                RestoreDirectory = true,
+                Multiselect = true
 
             };
 
             openFileDialog1.ShowDialog();
 
-            string results = openFileDialog1.FileName;
+            string[] results = openFileDialog1.FileNames;
             Functions.WriteToLogFile("Image selected at this location: [" + results + "]");
 
             return results;
